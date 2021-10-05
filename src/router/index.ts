@@ -1,22 +1,22 @@
-import Event from "../pages/Event"
-import Login from "../pages/Login"
+import React from "react";
+import Login from "../pages/Login";
+import Event from '../pages/Event';
 
-export interface IRoute{
-    path:string;
+export interface IRoute {
+    path: string;
     component: React.ComponentType;
-    exact?:boolean;
+    exact?: boolean;
 }
 
-export const publicRoutes:IRoute[] = [
-{path:'/login',component:Login,exact:true}
-] 
-
-export enum RouteNames{
+export enum RouteNames {
     LOGIN = '/login',
-    EVENT = '/',
-
+    EVENT = '/'
 }
-export const privateRoutes:IRoute[] = [
-    {path:RouteNames.LOGIN,component:Login,exact:true},
-    {path:RouteNames.EVENT,component:Event,exact:true}
-    ] 
+
+export const publicRoutes: IRoute[] = [
+    {path: RouteNames.LOGIN, exact: true, component: Login}
+]
+
+export const privateRoutes: IRoute[] = [
+    {path: RouteNames.EVENT, exact: true, component: Event}
+]
